@@ -1,6 +1,6 @@
 {
   "name": "oichegamos",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:prd": "ng build --configuration production",
-    "build:dev": "ng build --configuration development"
+    "build:dev": "ng build --configuration development --base-href=/dev/"
   },
   "private": true,
   "dependencies": {
