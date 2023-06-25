@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UnderConstructionComponent } from './shared/components/under-construction/under-construction.component';
+import { HomeComponent } from './modules/home-module/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: UnderConstructionComponent
+    component: HomeComponent,
   }
 ];
 
