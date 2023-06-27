@@ -10,7 +10,7 @@
     <div class="row gx-2">
 
       <ng-container *ngFor="let socialMedia of socialMedias">
-        <div class="col" *ngIf="!socialMedia.disabled">
+        <div class="col" *ngIf="!socialMedia.disabled && socialMedia.showOnHomePage">
           <div class="social-media-icon">
             <a href="{{socialMedia.url}}" target="_blank">
               <img src="{{socialMedia.icon}}" alt="{{socialMedia.name}}">

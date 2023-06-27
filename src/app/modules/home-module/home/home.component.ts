@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialMedias } from 'src/app/shared/constants/social_media.constant';
+import { ISocialMedia } from 'src/app/shared/interfaces/social-media.interface';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { SocialMedias } from 'src/app/shared/constants/social_media.constant';
 })
 export class HomeComponent implements OnInit {
 
-  socialMedias: Array<any> = SocialMedias;
+  socialMedias: Array<ISocialMedia> = SocialMedias;
 
   constructor() { }
 
