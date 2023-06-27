@@ -47,8 +47,3 @@
   height: 6vh;
   width: 6vh;
 }
-
-.social-media-buttons .disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
