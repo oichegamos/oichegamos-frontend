@@ -3,7 +3,7 @@ import { ISocialMedia } from "../interfaces/social-media.interface";
 export const SocialMedias: Array<ISocialMedia> = [
   {
     name: 'contato@oichegamos.com.br',
-    url: 'malito:contato@oichegamos.com.br',
+    url: 'mailto:contato@oichegamos.com.br',
     icon: 'assets/icons/email.png',
     disabled: false,
     showOnHomePage: false,
