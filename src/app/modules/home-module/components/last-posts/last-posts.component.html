@@ -1,0 +1,46 @@
+<div class="container-fluid mt-5">
+  <h3>últimas postagens</h3>
+  <!-- <div class="row"></div> -->
+  <div class="row mt-3">
+
+    <div [ngClass]="{'col-6': !isMobileDevice(), 'col-12': isMobileDevice()}">
+      <div class="last-post d-flex flex-column">
+        <div class="d-flex flex-column" [ngClass]="{'align-self-center': isMobileDevice()}">
+          <img src="https://media.discordapp.net/attachments/1116775664729727001/1121830481411985468/e657ea04-5cd3-4ad6-b6bb-fa051199c244.jpg?width=676&height=676" alt="imagem">
+
+          <span class="title">Título do post</span>
+          <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
+        </div>
+      </div>
+    </div>
+
+    <div [ngClass]="{'col-6': !isMobileDevice(), 'col-12 mt-2': isMobileDevice()}">
+      <div class="d-flex flex-column">
+        <div class="other-post mb-2 d-flex flex-row" [ngClass]="{'align-self-center': isMobileDevice()}">
+          <img src="https://media.discordapp.net/attachments/1116775664729727001/1121830481411985468/e657ea04-5cd3-4ad6-b6bb-fa051199c244.jpg?width=676&height=376" alt="imagem">
+          <div class="ps-2">
+            <span class="title">Título do post</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
+          </div>
+        </div>
+
+        <div class="other-post mb-2 d-flex flex-row" [ngClass]="{'align-self-center': isMobileDevice()}">
+          <img src="https://media.discordapp.net/attachments/1116775664729727001/1121830481411985468/e657ea04-5cd3-4ad6-b6bb-fa051199c244.jpg?width=676&height=376" alt="imagem">
+          <div class="ps-2">
+            <span class="title">Título do post</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
+          </div>
+        </div>
+
+        <div class="other-post mb-2 d-flex flex-row" [ngClass]="{'align-self-center': isMobileDevice()}">
+          <img src="https://media.discordapp.net/attachments/1116775664729727001/1121830481411985468/e657ea04-5cd3-4ad6-b6bb-fa051199c244.jpg?width=676&height=376" alt="imagem">
+          <div class="ps-2">
+            <span class="title">Título do post</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

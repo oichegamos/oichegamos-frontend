@@ -22,7 +22,7 @@
   height: 100vh;
 
   background: no-repeat center center;
-  background-image: url('../../../../assets/home_background.jpg');
+  background-image: url('../../../../../assets/home_background.jpg');
   background-size: cover;
 
   pointer-events: none;
