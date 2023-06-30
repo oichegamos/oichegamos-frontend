@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api-dev.oichegamos.com.br',
+  apiUrl: 'https://api-dev.oichegamos.com.br',
 };
 
 /*
