@@ -38,7 +38,7 @@ export class LastPostsComponent implements OnInit {
   }
 
   isMobileDevice(): boolean {
-    return window.innerWidth <= 576;
+    return window.innerWidth <= 767;
   }
 
 }

@@ -28,7 +28,7 @@
 }
 
 .other-post .description {
-  max-width: 40vw;
+  width: 38vw;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -52,6 +52,6 @@
   }
 
   .other-post .description {
-    max-width: 60vw;
+    width: 60vw;
   }
 }
