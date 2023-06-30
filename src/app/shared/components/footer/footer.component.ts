@@ -33,12 +33,10 @@ export class FooterComponent implements OnInit {
 
     if (this.isMobileDevice()) {
       this.renderer.addClass(footerElement, 'flex-column');
-      // this.renderer.addClass(divElement, 'align-items-center');
       this.renderer.removeClass(footerElement, 'justify-content-between');
     } else {
       this.renderer.addClass(footerElement, 'justify-content-between');
       this.renderer.removeClass(footerElement, 'flex-column');
-      // this.renderer.removeClass(divElement, 'align-items-center');
     }
   }
 
