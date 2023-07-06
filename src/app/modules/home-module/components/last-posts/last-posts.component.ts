@@ -2,6 +2,7 @@ import { IResponsePageable } from './../../../../shared/interfaces/response-page
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/shared/interfaces/post.interface';
 import { PostsService } from 'src/app/shared/services/posts.service';
+import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 
 @Component({
   selector: 'app-last-posts',
@@ -22,6 +23,7 @@ export class LastPostsComponent implements OnInit {
 
   constructor(
     private postsService: PostsService,
+    private utilitiesService: UtilitiesService,
   ) { }
 
   ngOnInit(): void {
@@ -38,7 +40,7 @@ export class LastPostsComponent implements OnInit {
   }
 
   isMobileDevice(): boolean {
-    return window.innerWidth <= 767;
+    return this.utilitiesService.isMobileDevice();
   }
 
 }

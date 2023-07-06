@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 
 @Component({
   selector: 'app-our-status',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurStatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private utilitiesService: UtilitiesService,
+  ) { }
 
   ngOnInit(): void {
   }
 
   isMobileDevice(): boolean {
-    return window.innerWidth <= 767;
+    return this.utilitiesService.isMobileDevice();
   }
 
 }

@@ -1,8 +1,4 @@
-/* .about-us {
-  align-items: stretch;
-} */
-
-.about-us span{
+.about-us span {
   font-size: 1.2em;
   width: 58vw;
 }
@@ -12,4 +8,17 @@
   height: 60vh;
 
   object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .about-us span{
+    width: 95vw;
+  }
+
+  .about-us img {
+    width: 95vw;
+    height: 60vh;
+
+    object-fit: cover;
+  }
 }

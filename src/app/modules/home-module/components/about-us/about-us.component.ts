@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private utilitiesService: UtilitiesService,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  isMobileDevice(): boolean {
+    return this.utilitiesService.isMobileDevice();
   }
 
 }
