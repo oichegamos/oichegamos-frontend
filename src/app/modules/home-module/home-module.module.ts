@@ -2,14 +2,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LastPostsComponent } from './components/last-posts/last-posts.component';
-import { OurNumbersComponent } from './components/our-numbers/our-numbers.component';
+import { OurStatusComponent } from './components/our-status/our-status.component';
 
 
 
 @NgModule({
   declarations: [
     LastPostsComponent,
-    OurNumbersComponent,
+    OurStatusComponent,
   ],
   imports: [
     CommonModule,
@@ -17,7 +17,7 @@ import { OurNumbersComponent } from './components/our-numbers/our-numbers.compon
   ],
   exports: [
     LastPostsComponent,
-    OurNumbersComponent,
+    OurStatusComponent,
   ]
 })
 export class HomeModule { }
