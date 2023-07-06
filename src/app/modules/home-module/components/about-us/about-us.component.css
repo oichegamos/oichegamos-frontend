@@ -1,0 +1,24 @@
+.about-us span {
+  font-size: 1.2em;
+  width: 58vw;
+}
+
+.about-us img {
+  width: 40vw;
+  height: 60vh;
+
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .about-us span{
+    width: 95vw;
+  }
+
+  .about-us img {
+    width: 95vw;
+    height: 60vh;
+
+    object-fit: cover;
+  }
+}

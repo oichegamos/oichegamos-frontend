@@ -1,0 +1,30 @@
+.our-status {
+  background-color: #FCCC8C;
+  width: 100%;
+  min-height: 25vh;
+
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.status-info img {
+  height: 6vw;
+  width: 6vw;
+}
+
+.status-info span {
+  margin-top: 1vh;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .status-info {
+    width: 50%;
+  }
+
+  .status-info img {
+    margin-top: 2vh;
+    height: 26vw;
+    width: 26vw;
+  }
+}
