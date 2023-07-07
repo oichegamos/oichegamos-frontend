@@ -1,0 +1,8 @@
+.not-found {
+  height: 100vh;
+}
+
+.not-found img {
+  height: 15vw;
+  width: 15vw;
+}
