@@ -1,6 +1,7 @@
 .about-us span {
   font-size: 1.2em;
   width: 58vw;
+  text-align: justify;
 }
 
 .about-us img {
@@ -12,11 +13,11 @@
 
 @media (max-width: 767px) {
   .about-us span{
-    width: 95vw;
+    width: 93vw;
   }
 
   .about-us img {
-    width: 95vw;
+    width: 93vw;
     height: 60vh;
 
     object-fit: cover;
