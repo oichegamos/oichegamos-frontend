@@ -14,6 +14,7 @@
 @media (max-width: 767px) {
   .about-us span{
     width: 93vw;
+    margin-top: 1vh;
   }
 
   .about-us img {
