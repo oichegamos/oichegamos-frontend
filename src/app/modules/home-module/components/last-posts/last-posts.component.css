@@ -39,7 +39,7 @@
 @media (max-width: 767px) {
   .last-post img {
     height: 40vw;
-    width: 80vw;
+    width: 93vw;
   }
 
   .other-post img {
@@ -48,10 +48,10 @@
   }
 
   .last-post .description {
-    max-width: 80vw;
+    max-width: 93vw;
   }
 
   .other-post .description {
-    width: 60vw;
+    width: 73vw;
   }
 }
