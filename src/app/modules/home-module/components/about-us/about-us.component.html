@@ -1,10 +1,10 @@
-<div class="container-fluid mt-5" *ngIf="aboutUs">
+<div class="container-fluid mt-5 w-100" *ngIf="aboutUs">
   <h3 *ngIf="isMobileDevice()">quem somos?</h3>
   <div class="about-us d-flex" [ngClass]="{
     'justify-content-between align-items-center': !isMobileDevice(),
     'flex-column-reverse': isMobileDevice()
   }">
-    <div class="d-flex flex-column pe-5">
+    <div class="d-flex flex-column" [ngClass]="{'pe-5': !isMobileDevice()}">
       <h3 *ngIf="!isMobileDevice()">quem somos?</h3>
       <span>{{aboutUs.description}}</span>
     </div>
