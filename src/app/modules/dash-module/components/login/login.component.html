@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="login d-flex justify-content-center align-items-center">
+  <div class="square d-flex flex-column pt-3 ps-5 pe-5 pb-5">
+    <div class="align-self-center mt-2 mb-5">
+      <img class="logo" src="assets/oichegamos_logo.png" alt="Oi, Chegamos!">
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">email</label>
+      <input type="email" class="form-control" id="emailInput" [(ngModel)]="email">
+    </div>
+    <div class="mb-3">
+      <label for="passwordInput" class="form-label">senha</label>
+      <input type="password" class="form-control" id="passwordInput" [(ngModel)]="password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="login()">entrar</button>
+    <span *ngIf="wrongEmailOrPassword" class="mt-3">usuário ou senha inválidos!</span>
+  </div>
+</div>

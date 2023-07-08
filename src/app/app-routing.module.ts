@@ -5,6 +5,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { DashboardComponent } from './modules/dash-module/components/dashboard/dashboard.component';
 import { LoginComponent } from './modules/dash-module/components/login/login.component';
 import { DashboardAuthGuard } from './modules/dash-module/guards/dashboard-auth.guard';
+import { LogoutComponent } from './modules/dash-module/components/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
     path: 'dash/login',
     pathMatch: 'full',
     component: LoginComponent,
+  },
+  {
+    path: 'dash/logout',
+    pathMatch: 'full',
+    component: LogoutComponent,
   },
   {
     path: '**',

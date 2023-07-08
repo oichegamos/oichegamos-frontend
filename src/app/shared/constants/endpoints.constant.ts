@@ -3,5 +3,9 @@ export const endpoints = {
   postBySlug: '/posts/slug/{slug}',
   categories: '/categories',
   aboutUs: '/about-us',
-  ourStatus: '/our-status'
+  ourStatus: '/our-status',
+  auth: {
+    signIn: '/auth/sign-in',
+    signUp: '/auth/sign-up'
+  }
 }
