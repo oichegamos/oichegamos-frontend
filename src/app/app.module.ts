@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './modules/home-module/home-module.module';
+import { DashModule } from './modules/dash-module/dash-module.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HomeModule } from './modules/home-module/home-module.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    DashModule,
     HomeModule,
     SharedModule,
   ],

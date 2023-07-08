@@ -5,6 +5,9 @@
 export const environment = {
   production: false,
   apiUrl: 'https://api-dev.oichegamos.com.br',
+  sessionStorage: {
+    token: 'oichegamos_token',
+  }
 };
 
 /*
