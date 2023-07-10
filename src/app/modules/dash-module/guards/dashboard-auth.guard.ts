@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
+import { routes } from "src/app/shared/constants/routes.constant";
 import { AuthenticationService } from "src/app/shared/services/authentication.service";
 
 @Injectable({
@@ -18,7 +19,7 @@ export class DashboardAuthGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/dash/login']);
+    this.router.navigate([routes.login]);
     return false;
   }
 }

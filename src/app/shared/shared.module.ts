@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,11 +17,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   imports: [
     CommonModule,
     HttpClientModule,
+    RouterModule,
   ],
   exports: [
     NavbarComponent,
     NotFoundComponent,
     FooterComponent,
+    RouterModule,
   ]
 })
 export class SharedModule { }

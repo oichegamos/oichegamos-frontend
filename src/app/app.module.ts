@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './modules/home-module/home-module.module';
 import { DashModule } from './modules/dash-module/dash-module.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DashModule } from './modules/dash-module/dash-module.module';
     HomeModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
