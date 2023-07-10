@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { routes } from 'src/app/shared/constants/routes.constant';
 import { IToken } from 'src/app/shared/interfaces/token.interface';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authenticationService.userIsLogged()) {
-      this.router.navigate(['/dash']);
+      this.router.navigate([routes.dash]);
     }
   }
 
