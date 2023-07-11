@@ -19,7 +19,7 @@ export class DashboardAuthGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate([routes.login]);
+    this.router.navigate([routes.dashboard.login]);
     return false;
   }
 }
