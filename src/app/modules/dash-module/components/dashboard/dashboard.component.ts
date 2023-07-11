@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { routes } from 'src/app/shared/constants/routes.constant';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  public appRoutes = routes;
 
   constructor() { }
 

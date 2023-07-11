@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { routes } from 'src/app/shared/constants/routes.constant';
 
 @Component({
   selector: 'app-list-posts',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent implements OnInit {
+
+  public appRoutes = routes;
 
   constructor() { }
 
