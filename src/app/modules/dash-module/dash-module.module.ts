@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './components/logout/logout.component';
 import { DashNavbarComponent } from './components/dash-navbar/dash-navbar.component';
 import { RouterModule } from '@angular/router';
+import { ListPostsComponent } from './components/posts/list-posts/list-posts.component';
+import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 
 
 
@@ -15,6 +17,8 @@ import { RouterModule } from '@angular/router';
     DashboardComponent,
     LogoutComponent,
     DashNavbarComponent,
+    ListPostsComponent,
+    EditPostComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +31,8 @@ import { RouterModule } from '@angular/router';
     LogoutComponent,
     DashNavbarComponent,
     RouterModule,
+    ListPostsComponent,
+    EditPostComponent,
   ],
 })
 export class DashModule { }
