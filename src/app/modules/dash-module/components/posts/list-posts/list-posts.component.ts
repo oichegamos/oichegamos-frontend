@@ -5,6 +5,7 @@ import { IPost } from 'src/app/shared/interfaces/post.interface';
 import { IResponsePageable } from 'src/app/shared/interfaces/response-pageable.interface';
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-list-posts',
@@ -23,9 +24,10 @@ export class ListPostsComponent implements OnInit {
   public posts: Array<IPost> = [];
 
   constructor(
+    private location: Location,
     private postsService: PostsService,
-    private utilitiesService: UtilitiesService,
     private router: Router,
+    private utilitiesService: UtilitiesService,
   ) { }
 
   ngOnInit(): void {
@@ -61,6 +63,26 @@ export class ListPostsComponent implements OnInit {
       .replace('{slug}', post.slug);
 
     this.router.navigate([route]);
+  }
+
+  deletePost(post: IPost): void {
+    console.log('delete post here')
+  }
+
+  openPostLink(post: IPost): void {
+    if (!post || !post.slug) {
+      return;
+    }
+
+    const route = this.appRoutes.blog.post
+      .replace('{slug}', post.slug);
+
+    const url = this.location.prepareExternalUrl(route);
+    window.open(url, '_blank');
+  }
+
+  isMobileDevice(): boolean {
+    return this.utilitiesService.isMobileDevice();
   }
 
 }

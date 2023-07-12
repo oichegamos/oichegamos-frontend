@@ -1,15 +1,29 @@
 <app-dash-navbar pageName="Posts"></app-dash-navbar>
-<div class="container-fluid mt-5 d-flex flex-column">
-  <div class="container-fluid mb-3">
-    <input type="text" class="form-control" id="searchTerm" [(ngModel)]="searchTerm">
 
+<div class="container-fluid d-flex flex-column">
+  <div class="row g-3">
+    <div class="col-8">
+      <input type="text" class="form-control" id="searchTerm" [(ngModel)]="searchTerm">
+    </div>
+    <div class="d-grid" [ngClass]="{'col-2': !isMobileDevice(), 'col-4': isMobileDevice()}">
+      <button type="button" class="btn btn-secondary">
+        <i class="bi bi-search"></i>
+        <span class="ps-2">Pesquisar</span>
+      </button>
+    </div>
+    <div class="d-grid" [ngClass]="{'col-2': !isMobileDevice(), 'col-12': isMobileDevice()}">
+      <button type="button" class="btn btn-primary">
+        <i class="bi bi-file-earmark-plus"></i>
+        <span class="ps-2">Criar novo post</span>
+      </button>
+    </div>
   </div>
 
-  <table class="table table-borderless table-striped">
+  <table class="table table-borderless table-striped mt-3">
     <thead>
-      <th>Título</th>
-      <th>Descrição</th>
-      <th>Opções</th>
+      <th class="text-center">Título</th>
+      <th class="text-center">Descrição</th>
+      <th class="text-center">Opções</th>
     </thead>
     <tbody>
       <tr *ngFor="let post of posts | paginate: { itemsPerPage: itemsPerPage,
@@ -18,9 +32,10 @@
                                                 }">
         <td>{{post.title}}</td>
         <td>{{getFiftyChars(post.content)}}</td>
-        <td>
-          <i class="bi bi-pencil-square"></i>
-          <i class="ps-3 bi bi-trash3-fill"></i>
+        <td class="d-flex justify-content-between">
+          <span class="pointer" (click)="openPostLink(post)"><i class="bi bi-link-45deg"></i></span>
+          <span class="pointer" (click)="editPost(post)"><i class="bi bi-pencil-square"></i></span>
+          <span class="pointer" (click)="deletePost(post)"><i class="bi bi-trash3-fill"></i></span>
         </td>
       </tr>
     </tbody>
