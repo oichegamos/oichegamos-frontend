@@ -11,7 +11,7 @@ export class DashNavbarComponent implements OnInit {
 
   public appRoutes = routes;
 
-  @Input() pageName: string = 'Dashboard';
+  @Input() pageName: string = 'Home';
 
   constructor(
     private location: Location,
