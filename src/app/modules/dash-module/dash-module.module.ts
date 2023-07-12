@@ -8,6 +8,7 @@ import { DashNavbarComponent } from './components/dash-navbar/dash-navbar.compon
 import { RouterModule } from '@angular/router';
 import { ListPostsComponent } from './components/posts/list-posts/list-posts.component';
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -24,6 +25,7 @@ import { EditPostComponent } from './components/posts/edit-post/edit-post.compon
     CommonModule,
     FormsModule,
     RouterModule,
+    NgxPaginationModule,
   ],
   exports: [
     LoginComponent,
