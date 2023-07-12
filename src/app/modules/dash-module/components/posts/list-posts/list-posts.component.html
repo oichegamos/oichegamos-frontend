@@ -1,5 +1,37 @@
 <app-dash-navbar pageName="Posts" currentRoute="{{appRoutes.dashboard.posts.listPosts}}"></app-dash-navbar>
-<div class="container-fluid">
-  <p>list-posts works!</p>
+<div class="container-fluid d-flex flex-column">
+  <div class="container-fluid mb-3">
+    <input type="text" class="form-control" id="searchTerm" [(ngModel)]="searchTerm">
+
+  </div>
+
+  <table class="table table-borderless table-striped">
+    <thead>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Opções</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts | paginate: { itemsPerPage: itemsPerPage,
+                                                  currentPage: currentPage,
+                                                  totalItems: totalItems
+                                                }">
+        <td>{{post.title}}</td>
+        <td>{{getFiftyChars(post.content)}}</td>
+        <td>
+          <i class="bi bi-pencil-square"></i>
+          <i class="ps-3 bi bi-trash3-fill"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mt-2 d-flex justify-content-center">
+    <pagination-controls
+    (pageChange)="pageChange($event)"
+    previousLabel="Anterior"
+    nextLabel="Próximo"
+    ></pagination-controls>
+  </div>
 
 </div>
