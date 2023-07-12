@@ -16,6 +16,8 @@ export class UtilitiesService {
       return value;
     }
 
-    return value.substring(0, 50) + '...';
+    const dots = withDots ? '...' : '';
+
+    return value.substring(0, 50) + dots;
   }
 }
