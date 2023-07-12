@@ -1,8 +1,11 @@
 export const routes = {
   home: '/',
-  blog: '/blog',
+  blog: {
+    home: '/blog',
+    post: '/blog/{slug}'
+  },
   dashboard: {
-    dash: '/dash',
+    home: '/dashboard',
     login: '/dash/login',
     logout: '/dash/logout',
     posts: {
