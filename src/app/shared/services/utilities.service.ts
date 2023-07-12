@@ -10,4 +10,12 @@ export class UtilitiesService {
   isMobileDevice(): boolean {
     return window.innerWidth <= 767;
   }
+
+  getFiftyChars(value: string, withDots: boolean = true): string {
+    if (value.length < 50) {
+      return value;
+    }
+
+    return value.substring(0, 50) + '...';
+  }
 }
