@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { ListPostsComponent } from './components/posts/list-posts/list-posts.component';
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -28,6 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RouterModule,
     NgxPaginationModule,
     NgxEditorModule,
+    NgSelectModule,
   ],
   exports: [
     LoginComponent,
