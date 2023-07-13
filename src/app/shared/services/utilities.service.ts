@@ -22,8 +22,7 @@ export class UtilitiesService {
   }
 
   getPlainText(value: string): string {
-    const div = document.createElement('div');
-    div.innerHTML = value;
-    return div.textContent || div.innerText || '';
+    const regex = /(<([^>]+)>)/gi;
+    return value.replace(regex, ' ').trim();
   }
 }
