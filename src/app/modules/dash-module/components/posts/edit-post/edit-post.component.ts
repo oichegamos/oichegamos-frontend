@@ -47,7 +47,9 @@ export class EditPostComponent implements OnInit {
     private postsService: PostsService,
     private router: Router,
   ) {
-    this.post.content = '';
+    if (!this.isEditing) {
+      this.post.content = '';
+    }
   }
 
   ngOnInit(): void {
