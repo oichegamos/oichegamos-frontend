@@ -1,3 +1,8 @@
-<app-dash-navbar></app-dash-navbar>
+<app-dash-navbar pageName="{{pageTitle}}"></app-dash-navbar>
 
-<p>edit-post works!</p>
+<div class="container-fluid">
+  <div>
+    <label for="title" class="form-label">Título</label>
+    <input type="email" class="form-control" id="title" [(ngModel)]="post.title">
+  </div>
+</div>
