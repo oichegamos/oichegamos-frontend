@@ -11,6 +11,7 @@ import { ListPostsComponent } from './components/posts/list-posts/list-posts.com
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -27,6 +28,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     FormsModule,
     RouterModule,
+    SharedModule,
     NgxPaginationModule,
     NgxEditorModule,
     NgSelectModule,

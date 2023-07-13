@@ -25,6 +25,8 @@ export class EditPostComponent implements OnInit {
 
   public editor: Editor = new Editor();
 
+  public postImage = '';
+
   public get isEditing(): boolean {
     return this.location.path().includes('edit');
   }
@@ -98,10 +100,12 @@ export class EditPostComponent implements OnInit {
     this.router.navigate([this.appRoutes.dashboard.posts.listPosts]);
   }
 
+  setImage(image: IImage) {
+    this.post.image = image;
+  }
+
   savePost() {
     this.isLoading = true;
-
-    console.log(this.post)
 
     const serviceMethod: Observable<IPost> = this.isEditing
       ? this.postsService.updatePost(this.post)
@@ -118,6 +122,26 @@ export class EditPostComponent implements OnInit {
     });
   }
 
+  imageSelected(fileInput: any): void {
+    console.log(fileInput);
+
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+
+        image.onload = rs => {
+          const base64Image = e.target.result;
+
+          console.log(`image: ${base64Image}`);
+        }
+      }
+
+      reader.readAsDataURL(fileInput.target.files[0]);
+    }
+  }
 
 
 }

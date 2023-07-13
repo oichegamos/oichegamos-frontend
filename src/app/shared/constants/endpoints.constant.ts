@@ -4,6 +4,7 @@ export const endpoints = {
   categories: '/categories',
   aboutUs: '/about-us',
   ourStatus: '/our-status',
+  images: '/images',
   auth: {
     signIn: '/auth/sign-in',
     signUp: '/auth/sign-up'
