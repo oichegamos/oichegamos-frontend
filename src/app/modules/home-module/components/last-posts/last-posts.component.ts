@@ -13,12 +13,8 @@ export class LastPostsComponent implements OnInit {
 
   lastPosts: Array<IPost> = [];
 
-  get lastPost(): IPost | undefined {
-    if (!this.lastPosts) {
-      return undefined;
-    }
-
-    return this.lastPosts[0];
+  get lastPost(): IPost {
+    return this.lastPosts ? this.lastPosts[0] : {} as IPost;
   }
 
   constructor(
@@ -41,6 +37,10 @@ export class LastPostsComponent implements OnInit {
 
   isMobileDevice(): boolean {
     return this.utilitiesService.isMobileDevice();
+  }
+
+  getPlainText(value: string): string {
+    return this.utilitiesService.getPlainText(value);
   }
 
 }

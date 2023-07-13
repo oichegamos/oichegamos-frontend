@@ -5,6 +5,7 @@ import { LastPostsComponent } from './components/last-posts/last-posts.component
 import { OurStatusComponent } from './components/our-status/our-status.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 
 

@@ -50,8 +50,13 @@ export class ListPostsComponent implements OnInit {
     this.loadPosts();
   }
 
-  getFiftyChars(value: string): string {
-    return this.utilitiesService.getFiftyChars(value);
+  getPostDescription(post: IPost): string {
+    if (!post || !post.content) {
+      return '';
+    }
+
+    const plainText = this.utilitiesService.getPlainText(post.content);
+    return this.utilitiesService.getFiftyChars(plainText);
   }
 
   newPost(): void {

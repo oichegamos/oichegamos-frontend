@@ -1,7 +1,11 @@
+import { Editor } from 'ngx-editor';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/shared/interfaces/post.interface';
 import { PostsService } from 'src/app/shared/services/posts.service';
+import { Router } from '@angular/router';
+import { routes } from 'src/app/shared/constants/routes.constant';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-post',
@@ -10,8 +14,12 @@ import { PostsService } from 'src/app/shared/services/posts.service';
 })
 export class EditPostComponent implements OnInit {
 
+  public appRoutes = routes;
+
   public post: IPost = {} as IPost;
   public isLoading: boolean = true;
+
+  public editor: Editor = new Editor();
 
   public get isEditing(): boolean {
     return this.location.path().includes('edit');
@@ -36,8 +44,11 @@ export class EditPostComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private postsService: PostsService
-  ) { }
+    private postsService: PostsService,
+    private router: Router,
+  ) {
+    this.post.content = '';
+  }
 
   ngOnInit(): void {
     if (this.isEditing) {
@@ -56,6 +67,30 @@ export class EditPostComponent implements OnInit {
           this.isLoading = false;
         }
       );
+  }
+
+  backToList() {
+    this.router.navigate([this.appRoutes.dashboard.posts.listPosts]);
+  }
+
+  savePost() {
+    this.isLoading = true;
+
+    console.log(this.post)
+
+    const serviceMethod: Observable<IPost> = this.isEditing
+      ? this.postsService.updatePost(this.post)
+      : this.postsService.createPost(this.post);
+
+    serviceMethod.subscribe({
+      next: (post: IPost) => {
+        this.backToList();
+      },
+      error: err => {
+        console.error(err);
+        this.isLoading = false;
+      }
+    });
   }
 
 

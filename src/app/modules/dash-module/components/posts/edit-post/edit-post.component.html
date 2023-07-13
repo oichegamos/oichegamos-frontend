@@ -5,4 +5,14 @@
     <label for="title" class="form-label">Título</label>
     <input type="email" class="form-control" id="title" [(ngModel)]="post.title">
   </div>
+
+  <div class="NgxEditor__Wrapper mt-3">
+    <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
+    <ngx-editor [editor]="editor" [(ngModel)]="post.content"></ngx-editor>
+  </div>
+
+  <div class="d-flex justify-content-end mt-2">
+    <button type="submit" class="btn btn-secondary" (click)="backToList()">cancelar</button>
+    <button type="submit" class="btn btn-primary ms-2" (click)="savePost()">salvar</button>
+  </div>
 </div>

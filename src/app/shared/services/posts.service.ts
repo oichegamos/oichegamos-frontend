@@ -30,4 +30,16 @@ export class PostsService {
 
     return this.http.get<IPost>(endpoint);
   }
+
+  createPost(post: IPost): Observable<IPost> {
+    const endpoint = this.baseUrl + endpoints.posts;
+
+    return this.http.post<IPost>(endpoint, post);
+  }
+
+  updatePost(post: IPost): Observable<IPost> {
+    const endpoint = this.baseUrl + `${endpoints.posts}/${post.id}`;
+
+    return this.http.put<IPost>(endpoint, post);
+  }
 }

@@ -1,3 +1,4 @@
+import { NgxEditorModule } from 'ngx-editor';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
@@ -26,6 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     RouterModule,
     NgxPaginationModule,
+    NgxEditorModule,
   ],
   exports: [
     LoginComponent,

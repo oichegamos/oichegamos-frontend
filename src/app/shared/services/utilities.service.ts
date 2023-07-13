@@ -20,4 +20,10 @@ export class UtilitiesService {
 
     return value.substring(0, 50) + dots;
   }
+
+  getPlainText(value: string): string {
+    const div = document.createElement('div');
+    div.innerHTML = value;
+    return div.textContent || div.innerText || '';
+  }
 }

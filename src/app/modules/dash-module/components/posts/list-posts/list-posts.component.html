@@ -31,7 +31,7 @@
                                                   totalItems: totalItems
                                                 }">
         <td>{{post.title}}</td>
-        <td>{{getFiftyChars(post.content)}}</td>
+        <td>{{getPostDescription(post)}}</td>
         <td class="d-flex justify-content-between">
           <span class="pointer" (click)="openPostLink(post)"><i class="bi bi-link-45deg"></i></span>
           <span class="pointer" (click)="editPost(post)"><i class="bi bi-pencil-square"></i></span>
