@@ -14,12 +14,10 @@
     </div>
 
     <div [ngClass]="{'col-6': !isMobileDevice(), 'col-12 mt-2': isMobileDevice()}">
-      <div class="d-flex flex-column mt-2">
-
-        <div
-          class="other-post mb-2 d-flex flex-row"
-          [ngClass]="{'align-self-center': isMobileDevice()}"
-          *ngFor="let post of lastPosts.slice(1, 3)"
+      <div class="d-flex flex-column">
+        <div class="other-post mb-2 d-flex flex-row"
+             [ngClass]="{'align-self-center': isMobileDevice()}"
+             *ngFor="let post of lastPosts.slice(1, 4)"
         >
           <img src="{{post.image.image_url}}" alt="imagem">
           <div class="ps-2">
