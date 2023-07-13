@@ -110,5 +110,7 @@
       }
     }
   },
-  "defaultProject": "oichegamos"
+  "cli": {
+    "analytics": "d317f0ec-5cd5-4bba-920b-267172068df6"
+  }
 }
