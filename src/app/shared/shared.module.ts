@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
 
 
 
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     NotFoundComponent,
     FooterComponent,
+    UploadImageComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { RouterModule } from '@angular/router';
     NotFoundComponent,
     FooterComponent,
     RouterModule,
+    UploadImageComponent,
   ]
 })
 export class SharedModule { }

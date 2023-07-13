@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { SocialMedias } from 'src/app/shared/constants/social_media.constant';
 import { ISocialMedia } from 'src/app/shared/interfaces/social-media.interface';
 

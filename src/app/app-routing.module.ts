@@ -6,6 +6,8 @@ import { DashboardComponent } from './modules/dash-module/components/dashboard/d
 import { LoginComponent } from './modules/dash-module/components/login/login.component';
 import { DashboardAuthGuard } from './modules/dash-module/guards/dashboard-auth.guard';
 import { LogoutComponent } from './modules/dash-module/components/logout/logout.component';
+import { ListPostsComponent } from './modules/dash-module/components/posts/list-posts/list-posts.component';
+import { EditPostComponent } from './modules/dash-module/components/posts/edit-post/edit-post.component';
 
 const routes: Routes = [
   {
@@ -14,9 +16,27 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'dash',
+    path: 'dashboard',
     pathMatch: 'full',
     component: DashboardComponent,
+    canActivate: [DashboardAuthGuard],
+  },
+  {
+    path: 'dash/posts',
+    pathMatch: 'full',
+    component: ListPostsComponent,
+    canActivate: [DashboardAuthGuard],
+  },
+  {
+    path: 'dash/posts/new',
+    pathMatch: 'full',
+    component: EditPostComponent,
+    canActivate: [DashboardAuthGuard],
+  },
+  {
+    path: 'dash/posts/edit/:slug',
+    pathMatch: 'full',
+    component: EditPostComponent,
     canActivate: [DashboardAuthGuard],
   },
   {

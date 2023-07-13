@@ -24,11 +24,22 @@ export class PostsService {
       .get<IResponsePageable<Array<IPost>>>(endpoint);
   }
 
-  getPostBySlug(slug: string): Observable<IResponsePageable<IPost>> {
+  getPostBySlug(slug: string): Observable<IPost> {
     const endpoint = this.baseUrl + endpoints.postBySlug
       .replace('{slug}', slug);
 
-    return this.http
-      .get<IResponsePageable<IPost>>(endpoint);
+    return this.http.get<IPost>(endpoint);
+  }
+
+  createPost(post: IPost): Observable<IPost> {
+    const endpoint = this.baseUrl + endpoints.posts;
+
+    return this.http.post<IPost>(endpoint, post);
+  }
+
+  updatePost(post: IPost): Observable<IPost> {
+    const endpoint = this.baseUrl + `${endpoints.posts}/${post.id}`;
+
+    return this.http.put<IPost>(endpoint, post);
   }
 }
