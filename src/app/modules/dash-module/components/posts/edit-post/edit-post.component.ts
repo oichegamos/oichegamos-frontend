@@ -6,6 +6,9 @@ import { PostsService } from 'src/app/shared/services/posts.service';
 import { Router } from '@angular/router';
 import { routes } from 'src/app/shared/constants/routes.constant';
 import { Observable } from 'rxjs';
+import { CategoriesService } from 'src/app/shared/services/categories.service';
+import { ICategory } from 'src/app/shared/interfaces/category.interface';
+import { IImage } from 'src/app/shared/interfaces/image.interface';
 
 @Component({
   selector: 'app-edit-post',
@@ -16,6 +19,7 @@ export class EditPostComponent implements OnInit {
 
   public appRoutes = routes;
 
+  public categories: Array<ICategory> = [];
   public post: IPost = {} as IPost;
   public isLoading: boolean = true;
 
@@ -43,25 +47,34 @@ export class EditPostComponent implements OnInit {
   }
 
   constructor(
+    private categoriesService: CategoriesService,
     private location: Location,
     private postsService: PostsService,
     private router: Router,
   ) {
-    if (!this.isEditing) {
-      this.post.content = '';
-    }
+    this.initializePost();
   }
 
   ngOnInit(): void {
-    if (this.isEditing) {
-      this.loadPost();
-    }
-    else {
-      this.isLoading = false;
-    }
+    this.loadPost();
+    this.loadCategories();
+  }
+
+  initializePost(): void {
+    const post = {} as IPost;
+    post.category = {} as ICategory;
+    post.category.id = 0;
+    post.image = {} as IImage;
+    post.content = '';
+
+    this.post = post;
   }
 
   loadPost(): void {
+    if (!this.isEditing) {
+      return;
+    }
+
     this.postsService.getPostBySlug(this.postSlug)
       .subscribe(
         (post: IPost) => {
@@ -69,6 +82,16 @@ export class EditPostComponent implements OnInit {
           this.isLoading = false;
         }
       );
+
+  }
+
+  loadCategories(): void {
+    this.categoriesService.getCategories()
+      .subscribe(
+        (categories: Array<ICategory>) => {
+          this.categories = categories;
+        }
+      )
   }
 
   backToList() {
