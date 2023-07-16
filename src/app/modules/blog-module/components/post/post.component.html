@@ -1,5 +1,19 @@
-<app-navbar></app-navbar>
-<div class="container-fluid">
-  post here
-</div>
-<app-footer></app-footer>
+<ng-container *ngIf="isLoading">
+
+</ng-container>
+
+<ng-container *ngIf="postNotFound">
+  <app-not-found></app-not-found>
+</ng-container>
+
+<ng-container *ngIf="!isLoading && !postNotFound">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+
+  <div class="content container-fluid" [innerHTML]="post.content">
+  </div>
+
+  <app-footer></app-footer>
+</ng-container>
+
