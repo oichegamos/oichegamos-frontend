@@ -1,8 +1,10 @@
+import { routes } from 'src/app/shared/constants/routes.constant';
 import { IResponsePageable } from './../../../../shared/interfaces/response-pageable.interface';
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/shared/interfaces/post.interface';
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { UtilitiesService } from 'src/app/shared/services/utilities.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-last-posts',
@@ -18,6 +20,7 @@ export class LastPostsComponent implements OnInit {
   }
 
   constructor(
+    private location: Location,
     private postsService: PostsService,
     private utilitiesService: UtilitiesService,
   ) { }
@@ -41,6 +44,13 @@ export class LastPostsComponent implements OnInit {
 
   getPlainText(value: string): string {
     return this.utilitiesService.getPlainText(value);
+  }
+
+  getPostLink(post: IPost): string {
+    const route = routes.blog.post
+      .replace('{slug}', post.slug);
+
+    return this.location.prepareExternalUrl(route);
   }
 
 }
