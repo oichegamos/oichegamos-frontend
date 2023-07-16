@@ -9,6 +9,7 @@ import { HomeModule } from './modules/home-module/home-module.module';
 import { DashModule } from './modules/dash-module/dash-module.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BlogModule } from './modules/blog-module/blog-module.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxEditorModule,
+    BlogModule,
     DashModule,
     HomeModule,
     SharedModule,

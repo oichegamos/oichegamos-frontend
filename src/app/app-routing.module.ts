@@ -8,12 +8,24 @@ import { DashboardAuthGuard } from './modules/dash-module/guards/dashboard-auth.
 import { LogoutComponent } from './modules/dash-module/components/logout/logout.component';
 import { ListPostsComponent } from './modules/dash-module/components/posts/list-posts/list-posts.component';
 import { EditPostComponent } from './modules/dash-module/components/posts/edit-post/edit-post.component';
+import { BlogComponent } from './modules/blog-module/components/blog/blog.component';
+import { PostComponent } from './modules/blog-module/components/post/post.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
+  },
+  {
+    path: 'blog',
+    pathMatch: 'full',
+    component: BlogComponent,
+  },
+  {
+    path: 'blog/:slug',
+    pathMatch: 'full',
+    component: PostComponent,
   },
   {
     path: 'dashboard',
