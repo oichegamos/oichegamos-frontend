@@ -1,5 +1,34 @@
+.blog-background {
+  position: relative;
+  height: 50vh;
+}
+
+.blog-background-img::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+.blog-background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+
+  background: no-repeat center center;
+  background-size: cover;
+
+  pointer-events: none;
+}
+
 .content {
-  min-height: 60vh;
+  min-height: 30vh;
 }
 
 .not-found {

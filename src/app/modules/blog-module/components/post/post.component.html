@@ -8,10 +8,13 @@
 
 <ng-container *ngIf="!isLoading && !postNotFound">
   <header>
-    <app-navbar></app-navbar>
+    <div class="blog-background-img" [ngStyle]="{'background-image': 'url(' + post.image.image_url + ')'}"></div>
+    <div class="blog-background">
+      <app-navbar></app-navbar>
+    </div>
   </header>
 
-  <div class="content container-fluid" [innerHTML]="post.content">
+  <div class="content container-fluid mt-2" [innerHTML]="post.content">
   </div>
 
   <app-footer></app-footer>
