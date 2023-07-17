@@ -15,6 +15,7 @@ import { Location } from '@angular/common';
 export class ListPostsComponent implements OnInit {
 
   public appRoutes = routes;
+  public isLoading: boolean = true;
 
   public currentPage: number = 1
   public totalItems: number = 0;
@@ -36,13 +37,14 @@ export class ListPostsComponent implements OnInit {
 
   loadPosts() {
     this.postsService.getPosts()
-      .subscribe(
-        (posts: IResponsePageable<Array<IPost>>) => {
+      .subscribe({
+        next: (posts: IResponsePageable<Array<IPost>>) => {
           this.posts = posts.data;
           this.totalItems = posts.total;
           this.itemsPerPage = posts.per_page;
-        }
-      );
+        },
+        complete: () => this.isLoading = false
+      });
   }
 
   pageChange(page: number) {

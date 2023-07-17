@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
+  public isLoading: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -74,16 +74,15 @@ export class EditPostComponent implements OnInit {
 
   loadPost(): void {
     if (!this.isEditing) {
+      this.isLoading = false;
       return;
     }
 
     this.postsService.getPostBySlug(this.postSlug)
-      .subscribe(
-        (post: IPost) => {
-          this.post = post;
-          this.isLoading = false;
-        }
-      );
+      .subscribe({
+        next: (post: IPost) => this.post = post,
+        complete: () => this.isLoading = false,
+      });
 
   }
 
