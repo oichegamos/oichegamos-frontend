@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './components/blog/blog.component';
 import { PostComponent } from './components/post/post.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -12,6 +13,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     PostComponent,
   ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     SharedModule,
   ],

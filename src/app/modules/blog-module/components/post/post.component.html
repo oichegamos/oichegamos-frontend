@@ -10,7 +10,7 @@
   <header>
     <div class="blog-background-img" [ngStyle]="{'background-image': 'url(' + post.image.image_url + ')'}"></div>
     <div class="blog-background">
-      <app-navbar></app-navbar>
+      <app-navbar [blurAndBorder]="true"></app-navbar>
       <div class="p-2 post-title d-flex justify-content-center align-items-center">
         <span>{{post.title}}</span>
       </div>

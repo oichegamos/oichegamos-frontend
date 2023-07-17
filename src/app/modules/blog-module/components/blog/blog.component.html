@@ -3,7 +3,43 @@
 </ng-container>
 
 <ng-container *ngIf="!isLoading">
-  <app-navbar></app-navbar>
-  <p>blog works!</p>
+  <header>
+    <div class="blog-background-img"></div>
+    <div class="blog-background">
+      <app-navbar></app-navbar>
+      <div class="p-2 post-title d-flex justify-content-center align-items-center">
+        <span>nossos posts</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="mt-4 container-fluid">
+    <div class="row g-3">
+      <div [ngClass]="{'col-4': !isMobileDevice(), 'col-12': isMobileDevice()}"
+        *ngFor="let post of posts  | paginate: { itemsPerPage: itemsPerPage,
+                                                 currentPage: currentPage,
+                                                 totalItems: totalItems
+                                               }">
+        <div class="card border-0">
+          <img class="card-img-top" src="{{post.image.image_url}}" alt="{{post.title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{getPlainText(post.content)}}</p>
+            <a href="{{getPostLink(post)}}" class="stretched-link"></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-2 d-flex justify-content-center">
+      <pagination-controls
+      (pageChange)="pageChange($event)"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+      ></pagination-controls>
+    </div>
+  </div>
+
   <app-footer></app-footer>
 </ng-container>
