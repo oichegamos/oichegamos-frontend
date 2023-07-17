@@ -74,16 +74,15 @@ export class EditPostComponent implements OnInit {
 
   loadPost(): void {
     if (!this.isEditing) {
+      this.isLoading = false;
       return;
     }
 
     this.postsService.getPostBySlug(this.postSlug)
-      .subscribe(
-        (post: IPost) => {
-          this.post = post;
-          this.isLoading = false;
-        }
-      );
+      .subscribe({
+        next: (post: IPost) => this.post = post,
+        complete: () => this.isLoading = false,
+      });
 
   }
 
@@ -112,36 +111,12 @@ export class EditPostComponent implements OnInit {
       : this.postsService.createPost(this.post);
 
     serviceMethod.subscribe({
-      next: (post: IPost) => {
-        this.backToList();
-      },
+      next: (post: IPost) => this.backToList(),
       error: err => {
         console.error(err);
         this.isLoading = false;
       }
     });
   }
-
-  imageSelected(fileInput: any): void {
-    console.log(fileInput);
-
-    if (fileInput.target.files && fileInput.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-
-        image.onload = rs => {
-          const base64Image = e.target.result;
-
-          console.log(`image: ${base64Image}`);
-        }
-      }
-
-      reader.readAsDataURL(fileInput.target.files[0]);
-    }
-  }
-
 
 }

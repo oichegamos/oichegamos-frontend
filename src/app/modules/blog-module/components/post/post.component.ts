@@ -31,7 +31,7 @@ export class PostComponent implements OnInit {
   loadPost(): void {
     this.postsService.getPostBySlug(this.postSlug)
       .subscribe({
-        next: (post: IPost) => {this.post = post; console.log(this.post.image.image_url)},
+        next: (post: IPost) => this.post = post,
         error: err => this.postNotFound = true,
         complete: () => this.isLoading = false
       });

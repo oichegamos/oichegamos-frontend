@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
@@ -15,6 +16,7 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     NotFoundComponent,
     FooterComponent,
     UploadImageComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     FooterComponent,
     RouterModule,
     UploadImageComponent,
+    LoadingComponent,
   ]
 })
 export class SharedModule { }

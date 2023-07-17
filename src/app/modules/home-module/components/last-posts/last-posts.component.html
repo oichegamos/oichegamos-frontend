@@ -3,7 +3,7 @@
   <div class="row mt-3">
 
     <div [ngClass]="{'col-6': !isMobileDevice(), 'col-12': isMobileDevice()}">
-      <div class="card border-light last-post d-flex flex-column">
+      <div class="card border-0 last-post d-flex flex-column">
         <div class="d-flex flex-column" [ngClass]="{'align-self-center': isMobileDevice()}">
           <img src="{{lastPost.image.image_url}}" alt="{{lastPost.image.description}}">
 
@@ -16,7 +16,7 @@
 
     <div [ngClass]="{'col-6': !isMobileDevice(), 'col-12 mt-2': isMobileDevice()}">
       <div class="d-flex flex-column">
-        <div class="card border-light other-post mb-2 d-flex flex-row"
+        <div class="card border-0 other-post mb-2 d-flex flex-row"
              [ngClass]="{'align-self-center': isMobileDevice()}"
              *ngFor="let post of lastPosts.slice(1, 4)"
         >
