@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routes } from '../../constants/routes.constant';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +10,15 @@ import { routes } from '../../constants/routes.constant';
 export class NavbarComponent implements OnInit {
 
   public appRoutes = routes;
+  // public isPostPage: boolean = false;
 
-  constructor() { }
+  get isPostPage(): boolean {
+    return this.location.path().includes(this.appRoutes.blog.home)
+  }
+
+  constructor(
+    private location: Location,
+  ) { }
 
   ngOnInit(): void {
   }
