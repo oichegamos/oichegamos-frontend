@@ -17,8 +17,14 @@ export class PostsService {
     private http: HttpClient,
   ) { }
 
-  getPosts(): Observable<IResponsePageable<Array<IPost>>> {
-    const endpoint = this.baseUrl + endpoints.posts;
+  getPosts(page: number, searchPost: IPost): Observable<IResponsePageable<Array<IPost>>> {
+    let endpoint = this.baseUrl + endpoints.posts + `?page=${page}`;
+
+    Object.keys(searchPost).forEach((field: string) => {
+      const value = searchPost[field];
+
+      endpoint = `${endpoint}&${field}=${value}`;
+    });
 
     return this.http
       .get<IResponsePageable<Array<IPost>>>(endpoint);

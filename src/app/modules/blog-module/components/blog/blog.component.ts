@@ -20,6 +20,11 @@ export class BlogComponent implements OnInit {
   public itemsPerPage: number = 10;
   public posts: Array<IPost> = [];
 
+  get searchPost(): IPost {
+    const searchPost = {} as IPost;
+    return searchPost;
+  }
+
   constructor(
     private location: Location,
     private postsService: PostsService,
@@ -31,7 +36,7 @@ export class BlogComponent implements OnInit {
   }
 
   loadPosts(): void {
-    this.postsService.getPosts()
+    this.postsService.getPosts(this.currentPage, this.searchPost)
       .subscribe({
         next: (posts: IResponsePageable<Array<IPost>>) => {
           this.posts = posts.data;

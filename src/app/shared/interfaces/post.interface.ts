@@ -10,4 +10,5 @@ export interface IPost {
   slug: string;
   image: IImage;
   category: ICategory;
+  [key: string]: any;
 }
