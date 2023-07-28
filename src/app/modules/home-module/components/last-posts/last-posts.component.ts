@@ -30,7 +30,9 @@ export class LastPostsComponent implements OnInit {
   }
 
   loadLastPosts(): void {
-    this.postsService.getPosts()
+    const searchPost = {} as IPost;
+
+    this.postsService.getPosts(1, searchPost)
       .subscribe(
         (result: IResponsePageable<Array<IPost>>) => {
           this.lastPosts = result.data;

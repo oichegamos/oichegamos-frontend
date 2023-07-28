@@ -24,6 +24,13 @@ export class ListPostsComponent implements OnInit {
   public searchTerm: string = '';
   public posts: Array<IPost> = [];
 
+  get searchPost(): IPost {
+    const searchPost = {} as IPost;
+    searchPost.title = this.searchTerm;
+
+    return searchPost;
+  }
+
   constructor(
     private location: Location,
     private postsService: PostsService,
@@ -36,14 +43,17 @@ export class ListPostsComponent implements OnInit {
   }
 
   loadPosts() {
-    this.postsService.getPosts()
+    this.isLoading = true;
+
+    this.postsService.getPosts(this.currentPage, this.searchPost)
       .subscribe({
         next: (posts: IResponsePageable<Array<IPost>>) => {
           this.posts = posts.data;
           this.totalItems = posts.total;
           this.itemsPerPage = posts.per_page;
+
+          this.isLoading = false;
         },
-        complete: () => this.isLoading = false
       });
   }
 

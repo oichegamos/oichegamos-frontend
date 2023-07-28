@@ -6,7 +6,7 @@
       <input type="text" class="form-control" id="searchTerm" [(ngModel)]="searchTerm">
     </div>
     <div class="d-grid" [ngClass]="{'col-2': !isMobileDevice(), 'col-4': isMobileDevice()}">
-      <button type="button" class="btn btn-secondary">
+      <button type="button" class="btn btn-secondary" (click)="loadPosts()">
         <i class="bi bi-search"></i>
         <span class="ps-2">Pesquisar</span>
       </button>
