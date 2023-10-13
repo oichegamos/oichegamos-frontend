@@ -130,6 +130,20 @@
           },
           "defaultConfiguration": "production"
         },
+        "serverless": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/oichegamos/serverless",
+            "main": "serverless.ts",
+            "tsConfig": "tsconfig.serverless.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {

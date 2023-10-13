@@ -1,0 +1,41 @@
+service: oichegamos-frontend
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
+  - serverless-api-compression
+  - serverless-associate-waf
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 150
+  timeout: 15
+  stage: production
+  region: us-east-1
+
+package:
+  patterns:
+    - '!./**'
+    - '!node_mudules/**'
+    - 'node_modules/@vendia/serverless-express/**'
+    - 'node_modules/aws-serverless-express/**'
+    - 'node_modules/binary-case/**'
+    - 'node_modules/media-typer/**'
+    - 'node_modules/mime-types/**'
+    - 'node_modules/mime-db/**'
+    - 'node_modules/type-is/**'
+    - 'dist/**'
+    - 'lambda.js'
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
+
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - http: GET /{proxy+}
+      - http: GET /
