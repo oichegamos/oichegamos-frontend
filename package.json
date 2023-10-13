@@ -10,7 +10,10 @@
     "dev:ssr": "ng run oichegamos-frontend:serve-ssr",
     "serve:ssr": "node dist/oichegamos-frontend/server/main.js",
     "build:ssr": "ng build && ng run oichegamos-frontend:server",
-    "prerender": "ng run oichegamos-frontend:prerender"
+    "prerender": "ng run oichegamos-frontend:prerender",
+    "serve:serverless": "serverless offline start",
+    "build:serverless": "ng build && ng run oichegamos-frontend:serverless:production",
+    "deploy:serverless": "npm run build:serverless && serverless deploy"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +27,7 @@
     "@angular/platform-server": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@nguniversal/express-engine": "^16.2.0",
+    "aws-serverless-express": "^3.4.0",
     "express": "^4.15.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -43,6 +47,11 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "serverless": "^3.35.2",
+    "serverless-api-compression": "^1.0.1",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-associate-waf": "^1.2.1",
+    "serverless-offline": "^13.2.0",
     "typescript": "~5.1.3"
   }
 }
