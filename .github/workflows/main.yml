@@ -1,40 +1,16 @@
 on:
   push:
     branches:
-      - main
+      - dev
 
-name: 🚀 Production Deploy
-
-env:
-  SERVER_DIR: 'public_html/'
-  BUILD_DIR: 'dist/oichegamos/'
-  BUILD_SCRIPT: 'build:prd'
+name: 🚀☁ aws deploy
 
 jobs:
-  build:
-    name: ⛏️ Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 🏠 Checkout
-        uses: actions/checkout@v2
-
-      - name: ⚙️ Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: ⚙️ Install dependencies
-        run: npm ci
-
-      - name: 📦 Build
-        run: npm run ${{ env.BUILD_SCRIPT }}
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: ftp.oichegamos.com.br
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          server-dir: ${{ env.SERVER_DIR }}
-          local-dir: ${{ env.BUILD_DIR }}
+  call-reusable-workflow:
+    name: ☁
+    uses: ./.github/workflows/aws-deploy.yml
+    with:
+      stage: dev
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
